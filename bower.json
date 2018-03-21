@@ -1,0 +1,19 @@
+{
+  "name": "particle_sort",
+  "version": "1.0.0",
+  "authors": [
+    "Yoshiki Yamada <nyamadandan@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "three.js": "threejs#r73",
+    "stats.js": "r14"
+  }
+}

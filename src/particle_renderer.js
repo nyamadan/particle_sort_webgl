@@ -1,4 +1,4 @@
-import THREE from 'three.js'
+import THREE from 'three'
 import {BitonicSort} from './bitonic_sort_webgl.js'
 import {Transform} from './transform.js'
 

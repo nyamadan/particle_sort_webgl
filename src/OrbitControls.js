@@ -1,4 +1,4 @@
-import THREE from 'three.js'
+import THREE from 'three'
 
 /**
  * @author qiao / https://github.com/qiao

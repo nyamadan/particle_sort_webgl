@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import './OrbitControls'
 
-import THREE from 'three.js'
+import THREE from 'three'
 import Stats from 'stats.js'
 
 import {ParticleRenderer} from './particle_renderer.js'

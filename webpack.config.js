@@ -1,34 +1,29 @@
-var webpack = require('webpack');
-var path = require("path");
+const path = require("path");
 
 module.exports = {
-  context: path.resolve(__dirname, "src"),
-  entry: "./app.js",
-  resolve: {
-    root: [path.join(__dirname, "bower_components")],
-    extensions: ["", ".js"]
-  },
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/dist/",
     filename: "bundle.js"
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /(node_modules|bower_components)/,
-      loader: 'babel'
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+              ]
+            }
+          }
+        ]
+      }
+    ]
   },
-  plugins: [
-    //new webpack.optimize.UglifyJsPlugin({
-    //  compress: {
-    //    warnings: false
-    //  }
-    //}),
-    new webpack.ResolverPlugin(
-      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    )
-  ],
-  devtool: "#inline-source-map"
+  devtool: process.env.NODE_ENV !== "production" ? "inline-source-map" : false
 };

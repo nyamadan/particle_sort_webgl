@@ -1,4 +1,4 @@
-import THREE from 'three.js'
+import THREE from 'three'
 
 import {PassThru} from './pass_thru.js'
 
